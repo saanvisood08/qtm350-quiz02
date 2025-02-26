@@ -1,0 +1,13 @@
+---
+title: "Life Expectancy and Population"
+---
+This visualization will be analysing the relationship between life expectancy and population
+
+```{r}
+library(ggplot2)
+library(readr)
+
+df <- read_csv("/Users/SaanviSood/Downloads/gapminder.csv")
+
+ggplot(df, aes(x = life_expectancy, population_millions)) + geom_point(alpha = 0.7) + labs( x = "Life Expectancy", y = "population_millions", title = "Life Expectancy and Population") + theme_minimal()
+```

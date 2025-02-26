@@ -1,0 +1,10 @@
+---
+title: "Quiz 2 Website"
+---
+
+This website will analyze the Gapminder dataset to showcase insights about life expectancy, GDP per Capital, Population, including trends in these factors by country. 
+
+Website Pages: 
+- [Life Expectancy and GDP per Capita](life-gdp.qmd)
+- [Life Expectancy and Population](life-population.qmd)
+- [Country Analysis](country.qmd)

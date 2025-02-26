@@ -1,0 +1,26 @@
+---
+title: "Country Analysis"
+---
+This visualization will be analysing changes in life expectancy, GDP per capita, and population for Brazil over time
+
+```{r}
+library(ggplot2)
+library(readr)
+library(dplyr)
+
+df <- read_csv("/Users/SaanviSood/Downloads/gapminder.csv")
+
+df_brazil <- df %>% filter(country == "Brazil")
+
+ggplot(df_brazil, aes(x = year)) +
+  geom_line(aes(y = life_expectancy, color = "Life Expectancy"), size = 1.2) +
+  geom_line(aes(y = gdp_per_capita / 1000, color = "GDP per Capita (in 1000s)"), size = 1.2) +
+  geom_line(aes(y = population_millions / 1000000, color = "Population (millions)"), size = 1.2) +
+  labs(
+    x = "Year",
+    y = "Value",
+    title = "Country Analysis: Brazil)",
+    color = "Metric"
+  ) +
+  theme_minimal()
+```

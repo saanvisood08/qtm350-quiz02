@@ -1,0 +1,13 @@
+---
+title: "Life Expectancy and GDP per Capita"
+---
+This visualization will be analysing the relationship between life expectancy and GDP per capita.
+
+```{r}
+library(ggplot2)
+library(readr)
+
+df <- read_csv("/Users/SaanviSood/Downloads/gapminder.csv")
+
+ggplot(df, aes(x = life_expectancy, gdp_per_capita)) + geom_point(alpha = 0.7) + labs(x = "Life Expectancy", y = "GDP per Capita", title = "Life Expectancy and GDP per Capita") + theme_minimal()
+```

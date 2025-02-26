@@ -1,0 +1,47 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Life Expectancy and GDP per Capita\"\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "This visualization will be analysing the relationship between life expectancy and GDP per capita.\n"
+      ],
+      "id": "7501ed21"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as matplot as plt\n",
+        "\n",
+        "df = pd.read_csv(\"gapminder.csv\")\n",
+        "\n",
+        "plt.scatter(df[\"gdpPercap\"], df[\"lifeExp\"])\n",
+        "plt.xlabel(\"GDP per Capita\")\n",
+        "plt.ylable(\"Life Expectancy\")\n",
+        "plt.title(\"Life Expectancy and GDP per Capita\")"
+      ],
+      "id": "cb26e58f",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/saanvisood/opt/anaconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "This visualization will be analysing the relationship between life expectancy and population\n\nlibrary(ggplot2)\nlibrary(readr)\n\ndf &lt;- read_csv(\"/Users/SaanviSood/Downloads/gapminder.csv\")\n\nRows: 1704 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, continent\ndbl (4): year, life_expectancy, population_millions, gdp_per_capita\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nggplot(df, aes(x = life_expectancy, population_millions)) + geom_point(alpha = 0.7) + labs( x = \"Life Expectancy\", y = \"population_millions\", title = \"Life Expectancy and Population\") + theme_minimal()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quiz 2 Website",
+    "section": "",
+    "text": "This website will analyze the Gapminder dataset to showcase insights about life expectancy, GDP per Capital, Population, including trends in these factors by country.\nWebsite Pages: - Life Expectancy and GDP per Capita - Life Expectancy and Population - Country Analysis"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "This visualization will be analysing changes in life expectancy, GDP per capita, and population for Brazil over time\n\nlibrary(ggplot2)\nlibrary(readr)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\ndf &lt;- read_csv(\"/Users/SaanviSood/Downloads/gapminder.csv\")\n\nRows: 1704 Columns: 6\n\n\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, continent\ndbl (4): year, life_expectancy, population_millions, gdp_per_capita\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\ndf_brazil &lt;- df %&gt;% filter(country == \"Brazil\")\n\nggplot(df_brazil, aes(x = year)) +\n  geom_line(aes(y = life_expectancy, color = \"Life Expectancy\"), size = 1.2) +\n  geom_line(aes(y = gdp_per_capita / 1000, color = \"GDP per Capita (in 1000s)\"), size = 1.2) +\n  geom_line(aes(y = population_millions / 1000000, color = \"Population (millions)\"), size = 1.2) +\n  labs(\n    x = \"Year\",\n    y = \"Value\",\n    title = \"Country Analysis: Brazil)\",\n    color = \"Metric\"\n  ) +\n  theme_minimal()\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "This visualization will be analysing the relationship between life expectancy and GDP per capita.\n\nlibrary(ggplot2)\nlibrary(readr)\n\ndf &lt;- read_csv(\"/Users/SaanviSood/Downloads/gapminder.csv\")\n\nRows: 1704 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, continent\ndbl (4): year, life_expectancy, population_millions, gdp_per_capita\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nggplot(df, aes(x = life_expectancy, gdp_per_capita)) + geom_point(alpha = 0.7) + labs(x = \"Life Expectancy\", y = \"GDP per Capita\", title = \"Life Expectancy and GDP per Capita\") + theme_minimal()"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
